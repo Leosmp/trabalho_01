@@ -6,13 +6,12 @@
 package entities.pk;
 
 import java.io.Serializable;
-
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
 import entities.Order;
 import entities.Product;
+import javax.persistence.FetchType;
 
 /**
  *
@@ -22,13 +21,13 @@ import entities.Product;
 public class OrderItemPK implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    @ManyToOne
-    @JoinColumn(name = "order_id")
+    
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ID_ORDER", referencedColumnName = "ID")    
     private Order order;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ID_PRODUCT", referencedColumnName = "ID")    
     private Product product;
 
     public Order getOrder() {

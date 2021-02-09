@@ -23,6 +23,8 @@ import javax.persistence.Persistence;
  */
 public class Program {
 
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("trabalho_01");
+    
     public static void main(String[] args) {
 
         Category cat1 = new Category(null, "Electronics");
@@ -52,18 +54,15 @@ public class Program {
         Payment pay1 = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"), o1);
         o1.setPayment(pay1);
 
-        EntityManagerFactory emf = null;
         EntityManager em = null;
         EntityTransaction et = null;
 
         try {
-            emf = Persistence.createEntityManagerFactory("trabalho_01");
             em = emf.createEntityManager(); //Criação do EntityManager.
             et = em.getTransaction(); //Recupera objeto responsável pelo gerenciamento de transação.
             et.begin();
             em.persist(u1);
             et.commit();
-            System.out.println("Application.Program.main()");
         } catch (Exception e) {
             if (et != null) {
                 et.rollback();

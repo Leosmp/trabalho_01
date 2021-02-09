@@ -20,6 +20,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 
 /**
  *
@@ -32,6 +34,7 @@ public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    //@Column(name = "ID_PRODUCT")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
@@ -39,18 +42,23 @@ public class Product implements Serializable {
     private Double price;
     private String imgUrl;
 
-    @ManyToMany
-    @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
+    
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "TB_PRODUCT_CATEGORIAS", joinColumns = {
+        @JoinColumn(name = "ID_ITEM")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "ID_CATEGORIA")})
     private Set<Category> categories = new HashSet<>();
 
-    @OneToMany(mappedBy = "id.product")
-    private Set<OrderItem> items = new HashSet<>();
+   @OneToMany(mappedBy = "orderItemPk.product", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)    
+   private Set<OrderItem> items = new HashSet<>();
 
     public Product() {
     }
 
     public Product(Long id, String name, String description, Double price, String imgUrl) {
-        this.id = id;
+        //this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;

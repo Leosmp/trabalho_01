@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,9 +19,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 import entities.enunm.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import javax.persistence.FetchType;
 
 /**
  *
@@ -43,14 +42,17 @@ public class Order implements Serializable {
 
     private Integer orderStatus;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    private User client;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID")
+    private User usuario;
+    
 
-    @OneToMany(mappedBy = "id.order")
+    @OneToMany(mappedBy = "orderItemPk.order", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<OrderItem> items = new HashSet<>();
 
-    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "ID_PAYMENT", referencedColumnName = "ID")
     private Payment payment;
 
     public Order() {
@@ -60,7 +62,7 @@ public class Order implements Serializable {
         this.id = id;
         this.moment = moment;
         setOrderStatus(orderStatus);
-        this.client = client;
+        this.usuario = client;
     }
 
     public Long getId() {
@@ -90,11 +92,11 @@ public class Order implements Serializable {
     }
 
     public User getClient() {
-        return client;
+        return usuario;
     }
 
     public void setClient(User client) {
-        this.client = client;
+        this.usuario = client;
     }
 
     public Payment getPayment() {
@@ -146,5 +148,4 @@ public class Order implements Serializable {
         }
         return true;
     }
-
 }

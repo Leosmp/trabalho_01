@@ -44,7 +44,7 @@ public class Order implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID")
-    private User usuario;
+    private User client;
     
 
     @OneToMany(mappedBy = "orderItemPk.order", fetch = FetchType.LAZY,
@@ -62,7 +62,7 @@ public class Order implements Serializable {
         this.id = id;
         this.moment = moment;
         setOrderStatus(orderStatus);
-        this.usuario = client;
+        this.client = client;
     }
 
     public Long getId() {
@@ -92,11 +92,11 @@ public class Order implements Serializable {
     }
 
     public User getClient() {
-        return usuario;
+        return client;
     }
 
     public void setClient(User client) {
-        this.usuario = client;
+        this.client = client;
     }
 
     public Payment getPayment() {

@@ -30,12 +30,10 @@ public class ProductTeste extends Teste {
     
     @Test
     public void consultarProduto() {
-        Product produto = em.find(Product.class, 1L);
+        Product produto = em.find(Product.class, 6L);
         assertEquals("Notebook",produto.getName());
         assertEquals("Um notebook comum",produto.getDescription());
         assertEquals("1500.0",produto.getPrice().toString());
-        
-
     }
     
     

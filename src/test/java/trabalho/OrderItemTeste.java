@@ -23,8 +23,14 @@ public class OrderItemTeste extends Teste {
     
     @Test
     public void persistirOrderItem() {
-        OrderItem ordemIt = new OrderItem();
-        ordemIt.setOrder((Order)em.find(Order.class, 2L));
+//        Order o;
+//        o = (Order) em.find(Order.class, 2L);
+//        
+//        Product p;
+//        p = em.find(Product.class, 2L);
+//        
+        OrderItem ordemIt = new OrderItem();//o, p, 3, 1950.0
+        ordemIt.setOrder(em.find(Order.class, 2L));
         ordemIt.setPrice(1950.0);
         ordemIt.setProduct(em.find(Product.class, 2L));
         ordemIt.setQuantity(3);

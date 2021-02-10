@@ -30,7 +30,7 @@ public class Payment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Instant moment;
+    private String moment;
 
  
     @OneToOne(mappedBy = "payment", optional = false, fetch = FetchType.LAZY)
@@ -39,7 +39,7 @@ public class Payment implements Serializable {
     public Payment() {
     }
 
-    public Payment(Long id, Instant moment, Order order) {
+    public Payment(Long id, String moment, Order order) {
         super();
         this.id = id;
         this.moment = moment;
@@ -54,11 +54,11 @@ public class Payment implements Serializable {
         this.id = id;
     }
 
-    public Instant getMoment() {
+    public String getMoment() {
         return moment;
     }
 
-    public void setMoment(Instant moment) {
+    public void setMoment(String moment) {
         this.moment = moment;
     }
 

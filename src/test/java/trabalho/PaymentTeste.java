@@ -23,7 +23,7 @@ public class PaymentTeste extends Teste {
     @Test
     public void persistirPayment() {
         Payment pagamento = new Payment();
-        pagamento.setMoment(Instant.parse("2020-01-20T21:53:07Z"));
+        pagamento.setMoment("2020-01-20T21:53:07Z");
         pagamento.setOrder(em.find(Order.class, 4L));
         em.persist(pagamento);
         em.flush();

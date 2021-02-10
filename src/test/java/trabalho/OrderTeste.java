@@ -22,7 +22,7 @@ public class OrderTeste extends Teste {
    @Test
     public void persistirOrder() {
         Order ordem = new Order();
-        ordem.setMoment(Instant.parse("2019-06-20T19:53:07Z"));
+        ordem.setMoment("2019-06-20T19:53:07Z");
         ordem.setOrderStatus(OrderStatus.WAITING_PAYMENT);
         ordem.setPayment(null);
         em.persist(ordem);

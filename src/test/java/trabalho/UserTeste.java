@@ -32,7 +32,7 @@ public class UserTeste extends Teste {
     
     @Test
     public void consultarUsuario() {
-        User usuario = em.find(User.class, 1L);
+        User usuario = em.find(User.class, 3L);
         assertEquals("963258", usuario.getPhone());
         assertEquals("leo@gmail.com", usuario.getEmail());
         assertEquals("Leonardo Luiz",usuario.getName());

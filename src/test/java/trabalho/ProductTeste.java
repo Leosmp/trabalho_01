@@ -44,7 +44,7 @@ public class ProductTeste extends Teste {
         produto.setName("Notebook");
         produto.setDescription("Um notebook comum");
         produto.setPrice(1500.0);
-        produto.setImgUrl("");
+        produto.setImgUrl("null");
        
         return produto;
     }

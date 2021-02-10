@@ -33,6 +33,7 @@ public class DbUnitUtil {
             conn = DriverManager.getConnection(
                     "jdbc:derby://localhost:1527/trabalho_01", "app", "app");
             db_conn = new DatabaseConnection(conn);
+            db_conn.getConfig().setProperty(db_conn.getConfig().FEATURE_ALLOW_EMPTY_FIELDS, Boolean.TRUE);
             FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
             builder.setColumnSensing(true);
             InputStream in = DbUnitUtil.class.getResourceAsStream(XML_FILE);

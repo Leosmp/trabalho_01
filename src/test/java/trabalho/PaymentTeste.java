@@ -33,7 +33,7 @@ public class PaymentTeste extends Teste {
     
     @Test
     public void consultarPayment() {
-       Payment pagamento = em.find(Payment.class, 2L);
+       Payment pagamento = em.find(Payment.class, 4L);
        assertEquals("2020-01-20T21:53:07Z",pagamento.getMoment().toString());      
     }
     

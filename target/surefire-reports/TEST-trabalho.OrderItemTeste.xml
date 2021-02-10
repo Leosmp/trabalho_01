@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="2" failures="1" name="trabalho.OrderItemTeste" time="0.109" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.2+9-LTS"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.2\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\eletr\Desktop\trabalho_01"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="test" value="trabalho.OrderItemTeste"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\eletr\Desktop\trabalho_01"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="java.runtime.version" value="11.0.2+9-LTS"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\eletr\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\NetBeans-12.2\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\NetBeans-12.2\netbeans\java\maven\bin\..\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Java\jdk-11.0.2\bin;C:\Program Files\Git\cmd;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\eletr\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Sublime Text 3;C:\Users\eletr\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\eletr\Documents\gradle-6.1-all\gradle-6.1\bin;C:\Users\eletr\Documents\gradle-4.10.2-all\gradle-4.10.2\bin;C:\Users\eletr\Documents\spring-boot-cli-2.3.0.BUILD-SNAPSHOT-bin\spring-2.3.0.BUILD-SNAPSHOT\bin;;."/>
+    <property name="maven.conf" value="C:\NetBeans-12.2\netbeans\java\maven\bin\../conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="library.jansi.path" value="C:\NetBeans-12.2\netbeans\java\maven\bin\..\lib\jansi-native"/>
+    <property name="user.home" value="C:\Users\eletr"/>
+    <property name="user.timezone" value="America/Cayenne"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="eletr"/>
+    <property name="java.class.path" value="C:\NetBeans-12.2\netbeans\java\maven\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=trabalho.OrderItemTeste -Dmaven.ext.class.path=C:\NetBeans-12.2\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 test-compile surefire:test"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.2"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="11.0.2"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\NetBeans-12.2\netbeans\java\maven\bin\.."/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2019-01-15"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="trabalho.OrderItemTeste" name="persistirOrderItem" time="0.109">
+    <failure type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertNotNull(Assert.java:713)
+	at org.junit.Assert.assertNotNull(Assert.java:723)
+	at trabalho.OrderItemTeste.persistirOrderItem(OrderItemTeste.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+    <system-out>[EL Fine]: server: 2021-02-10 15:22:06.11--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2021-02-10 15:22:06.251--ServerSession(637241618)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.User] is set to [FIELD].
+[EL Config]: metadata: 2021-02-10 15:22:06.282--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field orders] is being defaulted to: class entities.Order.
+[EL Config]: metadata: 2021-02-10 15:22:06.282--ServerSession(637241618)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Order] is set to [FIELD].
+[EL Config]: metadata: 2021-02-10 15:22:06.282--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field client] is being defaulted to: class entities.User.
+[EL Config]: metadata: 2021-02-10 15:22:06.282--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field payment] is being defaulted to: class entities.Payment.
+[EL Config]: metadata: 2021-02-10 15:22:06.282--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field items] is being defaulted to: class entities.OrderItem.
+[EL Config]: metadata: 2021-02-10 15:22:06.282--ServerSession(637241618)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Product] is set to [FIELD].
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field categories] is being defaulted to: class entities.Category.
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field items] is being defaulted to: class entities.OrderItem.
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Payment] is set to [FIELD].
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field order] is being defaulted to: class entities.Order.
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Category] is set to [FIELD].
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.OrderItem] is set to [FIELD].
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.pk.OrderItemPK] is set to [FIELD].
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field product] is being defaulted to: class entities.Product.
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field order] is being defaulted to: class entities.Order.
+[EL Config]: metadata: 2021-02-10 15:22:06.298--ServerSession(637241618)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.User] is being defaulted to: User.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [password] is being defaulted to: PASSWORD.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [phone] is being defaulted to: PHONE.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [email] is being defaulted to: EMAIL.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Order] is being defaulted to: Order.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [orderStatus] is being defaulted to: ORDERSTATUS.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [moment] is being defaulted to: MOMENT.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Product] is being defaulted to: Product.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [imgUrl] is being defaulted to: IMGURL.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [price] is being defaulted to: PRICE.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Payment] is being defaulted to: Payment.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [moment] is being defaulted to: MOMENT.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Category] is being defaulted to: Category.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-02-10 15:22:06.314--ServerSession(637241618)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.OrderItem] is being defaulted to: OrderItem.
+[EL Config]: metadata: 2021-02-10 15:22:06.329--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [quantity] is being defaulted to: QUANTITY.
+[EL Config]: metadata: 2021-02-10 15:22:06.329--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [price] is being defaulted to: PRICE.
+[EL Config]: metadata: 2021-02-10 15:22:06.329--ServerSession(637241618)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2021-02-10 15:22:06.345--ServerSession(637241618)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field categories] is being defaulted to: ID.
+[EL Config]: metadata: 2021-02-10 15:22:06.345--ServerSession(637241618)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field categories] is being defaulted to: ID.
+[EL Info]: 2021-02-10 15:22:06.485--ServerSession(637241618)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.8.v20201217-ecdf3c32c4
+[EL Fine]: connection: 2021-02-10 15:22:06.485--ServerSession(637241618)--Connection(1332757905)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=&gt;DerbyPlatform
+	user name=&gt; &quot;app&quot;
+	datasource URL=&gt; &quot;jdbc:derby://localhost:1527/trabalho_01;create=true&quot;
+))
+[EL Config]: connection: 2021-02-10 15:22:06.61--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--Connected: jdbc:derby://localhost:1527/trabalho_01;create=true
+	User: app
+	Database: Apache Derby  Version: 10.14.2.0 - (1828579)
+	Driver: Apache Derby Network Client JDBC Driver  Version: 10.14.2.0 - (1828579)
+[EL Warning]: metadata: 2021-02-10 15:22:06.626--ServerSession(637241618)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [client] for the entity class [class entities.Order] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2021-02-10 15:22:06.626--ServerSession(637241618)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [payment] for the entity class [class entities.Order] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2021-02-10 15:22:06.626--ServerSession(637241618)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [order] for the entity class [class entities.Payment] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2021-02-10 15:22:06.642--ServerSession(637241618)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [product] for the entity class [class entities.pk.OrderItemPK] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2021-02-10 15:22:06.642--ServerSession(637241618)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [order] for the entity class [class entities.pk.OrderItemPK] since weaving was not enabled or did not occur.
+[EL Fine]: connection: 2021-02-10 15:22:06.657--ServerSession(637241618)--Thread(Thread[main,5,main])--/file:/C:/Users/eletr/Desktop/trabalho_01/target/classes/_trabalho_01 login successful
+[EL Fine]: sql: 2021-02-10 15:22:06.673--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE tb_order DROP CONSTRAINT tb_orderID_USUARIO
+[EL Fine]: sql: 2021-02-10 15:22:06.72--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE tb_order DROP CONSTRAINT tb_orderID_PAYMENT
+[EL Fine]: sql: 2021-02-10 15:22:06.751--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE tb_order_item DROP CONSTRAINT tbrderitemDPRODUCT
+[EL Fine]: sql: 2021-02-10 15:22:06.798--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE tb_order_item DROP CONSTRAINT tborderitemIDORDER
+[EL Fine]: sql: 2021-02-10 15:22:06.829--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE TB_PRODUCT_CATEGORIAS DROP CONSTRAINT TBPRDCTCTGRASDCTGR
+[EL Fine]: sql: 2021-02-10 15:22:06.876--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE TB_PRODUCT_CATEGORIAS DROP CONSTRAINT TBPRDCTCTGORIASDTM
+[EL Fine]: sql: 2021-02-10 15:22:06.923--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--DROP TABLE tb_order
+[EL Fine]: sql: 2021-02-10 15:22:06.986--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--DROP TABLE tb_payment
+[EL Fine]: sql: 2021-02-10 15:22:07.048--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--DROP TABLE tb_order_item
+[EL Fine]: sql: 2021-02-10 15:22:07.111--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--DROP TABLE tb_user
+[EL Fine]: sql: 2021-02-10 15:22:07.204--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--DROP TABLE tb_product
+[EL Fine]: sql: 2021-02-10 15:22:07.267--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--DROP TABLE tb_category
+[EL Fine]: sql: 2021-02-10 15:22:07.329--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--DROP TABLE TB_PRODUCT_CATEGORIAS
+[EL Fine]: sql: 2021-02-10 15:22:07.407--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--CREATE TABLE tb_order (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, MOMENT BLOB(2147483647), ORDERSTATUS INTEGER, ID_USUARIO BIGINT, ID_PAYMENT BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2021-02-10 15:22:07.736--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--CREATE TABLE tb_payment (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, MOMENT BLOB(2147483647), PRIMARY KEY (ID))
+[EL Fine]: sql: 2021-02-10 15:22:07.911--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--CREATE TABLE tb_order_item (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, PRICE FLOAT, QUANTITY INTEGER, ID_ORDER BIGINT, ID_PRODUCT BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2021-02-10 15:22:08.02--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--CREATE TABLE tb_user (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, EMAIL VARCHAR(255), NAME VARCHAR(255), PASSWORD VARCHAR(255), PHONE VARCHAR(255), PRIMARY KEY (ID))
+[EL Fine]: sql: 2021-02-10 15:22:08.129--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--CREATE TABLE tb_product (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, DESCRIPTION VARCHAR(255), IMGURL VARCHAR(255), NAME VARCHAR(255), PRICE FLOAT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2021-02-10 15:22:08.192--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--CREATE TABLE tb_category (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, NAME VARCHAR(255), PRIMARY KEY (ID))
+[EL Fine]: sql: 2021-02-10 15:22:08.27--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--CREATE TABLE TB_PRODUCT_CATEGORIAS (ID_ITEM BIGINT NOT NULL, ID_CATEGORIA BIGINT NOT NULL, PRIMARY KEY (ID_ITEM, ID_CATEGORIA))
+[EL Fine]: sql: 2021-02-10 15:22:08.364--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE tb_order ADD CONSTRAINT tb_orderID_USUARIO FOREIGN KEY (ID_USUARIO) REFERENCES tb_user (ID)
+[EL Fine]: sql: 2021-02-10 15:22:08.411--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE tb_order ADD CONSTRAINT tb_orderID_PAYMENT FOREIGN KEY (ID_PAYMENT) REFERENCES tb_payment (ID)
+[EL Fine]: sql: 2021-02-10 15:22:08.442--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE tb_order_item ADD CONSTRAINT tbrderitemDPRODUCT FOREIGN KEY (ID_PRODUCT) REFERENCES tb_product (ID)
+[EL Fine]: sql: 2021-02-10 15:22:08.489--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE tb_order_item ADD CONSTRAINT tborderitemIDORDER FOREIGN KEY (ID_ORDER) REFERENCES tb_order (ID)
+[EL Fine]: sql: 2021-02-10 15:22:08.536--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE TB_PRODUCT_CATEGORIAS ADD CONSTRAINT TBPRDCTCTGRASDCTGR FOREIGN KEY (ID_CATEGORIA) REFERENCES tb_category (ID)
+[EL Fine]: sql: 2021-02-10 15:22:08.598--ServerSession(637241618)--Connection(1105628551)--Thread(Thread[main,5,main])--ALTER TABLE TB_PRODUCT_CATEGORIAS ADD CONSTRAINT TBPRDCTCTGORIASDTM FOREIGN KEY (ID_ITEM) REFERENCES tb_product (ID)
+[EL Fine]: sql: 2021-02-10 15:22:08.926--ClientSession(2054757222)--Connection(1105628551)--Thread(Thread[main,5,main])--INSERT INTO tb_order_item (PRICE, QUANTITY, ID_ORDER, ID_PRODUCT) VALUES (?, ?, ?, ?)
+	bind =&gt; [1950.0, 3, null, null]
+[EL Fine]: sql: 2021-02-10 15:22:08.926--ClientSession(2054757222)--Connection(1105628551)--Thread(Thread[main,5,main])--values IDENTITY_VAL_LOCAL()
+</system-out>
+    <system-err>SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Bad Base64 input character at 4: 45(decimal)
+Bad Base64 input character at 4: 45(decimal)
+Bad Base64 input character at 4: 45(decimal)
+Bad Base64 input character at 4: 45(decimal)
+Bad Base64 input character at 4: 45(decimal)
+Bad Base64 input character at 4: 45(decimal)
+</system-err>
+  </testcase>
+  <testcase classname="trabalho.OrderItemTeste" name="consultarOrderItem" time="0"/>
+</testsuite>

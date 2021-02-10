@@ -8,6 +8,7 @@ package trabalho;
 import entities.Order;
 import entities.OrderItem;
 import entities.Product;
+import entities.Product_;
 import entities.enunm.OrderStatus;
 import java.time.Instant;
 import static org.junit.Assert.assertEquals;
@@ -23,7 +24,7 @@ public class OrderItemTeste extends Teste {
     @Test
     public void persistirOrderItem() {
         OrderItem ordemIt = new OrderItem();
-        ordemIt.setOrder(em.find(Order.class, 2L));
+        ordemIt.setOrder((Order)em.find(Order.class, 2L));
         ordemIt.setPrice(1950.0);
         ordemIt.setProduct(em.find(Product.class, 2L));
         ordemIt.setQuantity(3);
@@ -34,9 +35,10 @@ public class OrderItemTeste extends Teste {
     }
     
     @Test
-    public void consultarOrder() {
+    public void consultarOrderItem() {
         OrderItem ordemIt = em.find(OrderItem.class, 5L);
-       assertEquals("1950.0",ordemIt.getPrice().toString());     
+        System.out.println(String.valueOf(ordemIt.getPrice()));
+        assertEquals("1950.0", String.valueOf(ordemIt.getPrice()));     
     }
     
 }

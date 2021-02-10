@@ -21,6 +21,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import entities.enunm.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import javax.persistence.Column;
 import javax.persistence.FetchType;
 
 /**
@@ -52,7 +53,7 @@ public class Order implements Serializable {
     private Set<OrderItem> items = new HashSet<>();
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "ID_PAYMENT", referencedColumnName = "ID")
+    @JoinColumn(name = "ID_PAYMENT", referencedColumnName = "ID", nullable = true)
     private Payment payment;
 
     public Order() {

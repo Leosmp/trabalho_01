@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<dataset>
+<!--CATEGORIA-->
+<TB_CATEGORY NAME="Electronics"/><!-- Id = 1 -->
+<TB_CATEGORY NAME="Books"/><!-- Id = 2 -->
+<TB_CATEGORY NAME="Computers"/><!-- Id = 3 -->
+
+<!--PRODUTOS-->
+<TB_PRODUCT name="The Lord of the Rings" DESCRIPTION="Lorem ipsum dolor sit amet, consectetur." PRICE= "90.5" IMGURL=""/><!-- Id = 1 -->
+<TB_PRODUCT name="Smart TV" DESCRIPTION="Nulla eu imperdiet purus. Maecenas ante." PRICE= "2190.0" IMGURL=""/><!-- Id = 2 -->
+<TB_PRODUCT name="Macbook Pro" DESCRIPTION="Nam eleifend maximus tortor, at mollis." PRICE= "1250.0" IMGURL=""/><!-- Id = 3 -->
+<TB_PRODUCT name="PC Gamer" DESCRIPTION="Donec aliquet odio ac rhoncus cursus." PRICE= "1200.0" IMGURL=""/><!-- Id = 4 -->
+<TB_PRODUCT name="Rails for Dummies" DESCRIPTION="Cras fringilla convallis sem vel faucibus." PRICE= "100.99" IMGURL=""/><!-- Id = 5 -->
+
+<!--PRODUTO_CATEGORIA-->
+<TB_PRODUCT_CATEGORIAS ID_ITEM="1" ID_CATEGORIA="2"/>
+<TB_PRODUCT_CATEGORIAS ID_ITEM="2" ID_CATEGORIA="1"/>
+<TB_PRODUCT_CATEGORIAS ID_ITEM="2" ID_CATEGORIA="3"/>
+<TB_PRODUCT_CATEGORIAS ID_ITEM="3" ID_CATEGORIA="3"/>
+<TB_PRODUCT_CATEGORIAS ID_ITEM="4" ID_CATEGORIA="3"/>
+<TB_PRODUCT_CATEGORIAS ID_ITEM="5" ID_CATEGORIA="2"/>
+
+<!--USUÁRIO-->
+<TB_USER NAME="Maria Brown" EMAIL="maria@gmail.com" PHONE="988888888" PASSWORD="123456"/><!-- Id = 1 -->
+<TB_USER NAME="Alex Green" EMAIL="alex@gmail.com" PHONE="977777777" PASSWORD="123456"/><!-- Id = 2 -->
+
+<!--PEDIDO-->
+<TB_ORDER MOMENT="2019-06-20T19:53:07Z" ORDERSTATUS="2" ID_USUARIO="1" ID_PAYMENT="1"/><!-- Id = 1 -->
+<TB_ORDER MOMENT="2019-07-21T03:42:10Z" ORDERSTATUS="1" ID_USUARIO="2" ID_PAYMENT=""/><!-- Id = 2 -->
+<TB_ORDER MOMENT="2019-07-22T15:21:22Z" ORDERSTATUS="1" ID_USUARIO="1" ID_PAYMENT=""/><!-- Id = 3 -->
+
+<!--ITEM_PEDIDO-->
+<TB_ORDER_ITEM ID_ORDER="1" ID_PRODUCT="1" QUANTITY="2" PRICE="90.5"/><!-- Id = 1 -->
+<TB_ORDER_ITEM ID_ORDER="1" ID_PRODUCT="3" QUANTITY="1" PRICE="1250.0"/><!-- Id = 2 -->
+<TB_ORDER_ITEM ID_ORDER="2" ID_PRODUCT="3" QUANTITY="2" PRICE="1250.0"/><!-- Id = 3 -->
+<TB_ORDER_ITEM ID_ORDER="3" ID_PRODUCT="5" QUANTITY="2" PRICE="100.99"/><!-- Id = 4 -->
+
+<!--PAYMENT-->
+<TB_PAYMENT MOMENT="2019-06-20T21:53:07Z"/>
+
+</dataset>

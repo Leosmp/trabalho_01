@@ -16,6 +16,8 @@ import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
 
+import entities.User;
+
 /**
  *
  * @author Dev Dreamm

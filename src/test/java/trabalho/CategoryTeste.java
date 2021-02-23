@@ -22,6 +22,7 @@ public class CategoryTeste extends Teste {
         categoria.setName("Food"); 
         em.persist(categoria);
         em.flush();
+        System.out.println("AQUIIII --------->"+categoria.getId());
         assertNotNull(categoria.getId());
     }
     

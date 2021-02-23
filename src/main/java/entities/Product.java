@@ -21,6 +21,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.FetchType;
 
 /**
@@ -28,25 +29,34 @@ import javax.persistence.FetchType;
  * @author Dev Dreamm
  */
 @Entity
-@Table(name = "tb_product")
+@Table(name = "TB_PRODUCT")
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Column(name = "ID_PRODUCT")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Column(name = "NAME", length = 25, nullable = false)
     private String name;
+    
+    @Column(name = "DESCRIPTION", length = 150, nullable = false)
     private String description;
+    
+    @Column(name = "PRICE", length = 100000, nullable = false)
     private Double price;
+    
+    @Column(name = "IMGURL", length = 20, nullable = false)
     private String imgUrl;
 
     
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "TB_PRODUCT_CATEGORIAS", joinColumns = {
+    @JoinTable(name = "TB_PRODUCT_CATEGORY", joinColumns = {
         @JoinColumn(name = "ID_ITEM")},
             inverseJoinColumns = {
-                @JoinColumn(name = "ID_CATEGORIA")})
+                @JoinColumn(name = "ID_CATEGORY")})
     private Set<Category> categories = new HashSet<>();
 
    @OneToMany(mappedBy = "orderItemPk.product", fetch = FetchType.LAZY,

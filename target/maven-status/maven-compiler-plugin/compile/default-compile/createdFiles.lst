@@ -1,5 +1,6 @@
 entities\Order_.class
 entities\Category.class
+entities\Client.class
 entities\pk\OrderItemPK_.class
 entities\Product_.class
 entities\OrderItem_.class
@@ -7,6 +8,7 @@ entities\enunm\OrderStatus.class
 entities\User_.class
 Application\Program.class
 entities\Payment_.class
+entities\Client_.class
 entities\Category_.class
 entities\pk\OrderItemPK.class
 entities\Payment.class

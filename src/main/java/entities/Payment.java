@@ -7,6 +7,7 @@ package entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import javax.persistence.Column;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,15 +22,17 @@ import javax.persistence.FetchType;
  * @author Dev Dreamm
  */
 @Entity
-@Table(name = "tb_payment")
+@Table(name = "TB_PAYMENT")
 public class Payment implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Column(name = "ID_PAYMENT")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "MOMENT", length = 20, nullable = false)
     private String moment;
 
  

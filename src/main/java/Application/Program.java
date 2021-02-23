@@ -6,6 +6,7 @@
 package Application;
 
 import entities.Category;
+import entities.Client;
 import entities.Order;
 import entities.Payment;
 import entities.Product;
@@ -27,7 +28,7 @@ public class Program {
     
     public static void main(String[] args) {   
 
-        User u1 = new User(null, "Leonardo Luiz", "leo@gmail.com", "963258", "123965");
+        Client c1 = new Client(null, "Leonardo Luiz", "leo@gmail.com", "963258", "123965");
         
         EntityManager em = null;
         EntityTransaction et = null;
@@ -36,7 +37,7 @@ public class Program {
             em = emf.createEntityManager(); //Criação do EntityManager.
             et = em.getTransaction(); //Recupera objeto responsável pelo gerenciamento de transação.
             et.begin();
-            em.persist(u1);
+            em.persist(c1);
             et.commit();
         } catch (Exception e) {
             if (et != null) {

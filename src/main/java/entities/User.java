@@ -8,13 +8,20 @@ package entities;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -23,22 +30,31 @@ import javax.persistence.Table;
  * @author Dev Dreamm
  */
 @Entity
-@Table(name = "tb_user")
+@Table(name = "TB_USER")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "TYPE_USER", 
+        discriminatorType = DiscriminatorType.STRING, length = 1)
+@Access(AccessType.FIELD)
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-    private String email;
-    private String phone;
-    private String password;
-
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY,
-            cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Order> orders = new ArrayList<>();
+    protected Long id;
+    
+    @Column(name = "NAME", length = 150, nullable = false)
+    protected String name;
+            
+    @Column(name = "EMAIL", length = 40, nullable = false)         
+    protected String email;
+    
+    @Column(name = "PHONE", length = 20, nullable = false)
+    protected String phone;
+    
+    @Column(name = "PASSWORD", length = 20, nullable = false)
+    protected String password;
 
     public User() {
     }
@@ -91,9 +107,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-//    public List<Order> getOrders() {
-//        return orders;
-//    }
     @Override
     public int hashCode() {
         final int prime = 31;

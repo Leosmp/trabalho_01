@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import entities.pk.OrderItemPK;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,20 +21,23 @@ import javax.persistence.Id;
  * @author Dev Dreamm
  */
 @Entity
-@Table(name = "tb_order_item")
+@Table(name = "TB_ORDER_ITEM")
 public class OrderItem implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
     @Id
+    @Column(name = "ID_ORDER_ITEM")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     
     @Embedded
     private OrderItemPK orderItemPk = new OrderItemPK();
-
+    
+    @Column(name = "QUANTITY", length = 100, nullable = false)
     private Integer quantity;
+    
+    @Column(name = "PRICE", length = 100000, nullable = false)
     private Double price;
 
     public OrderItem() {

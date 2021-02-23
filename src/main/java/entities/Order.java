@@ -29,37 +29,39 @@ import javax.persistence.FetchType;
  * @author Dev Dreamm
  */
 @Entity
-@Table(name = "tb_order")
+@Table(name = "TB_ORDER")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Column(name = "ID_ORDER")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @Column(name = "MOMENT", length = 20, nullable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd'T' HH:mm:ss'Z'", timezone = "GMT")
     private String moment;
-
+    
+    @Column(name = "ORDER_STATUS", length = 1, nullable = false)
     private Integer orderStatus;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID")
-    private User client;
+    @JoinColumn(name = "ID_CLIENT", referencedColumnName = "ID_USER")
+    private Client client;
     
-
     @OneToMany(mappedBy = "orderItemPk.order", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<OrderItem> items = new HashSet<>();
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "ID_PAYMENT", referencedColumnName = "ID", nullable = true)
+    @JoinColumn(name = "ID_PAYMENT", referencedColumnName = "ID_PAYMENT", nullable = true)
     private Payment payment;
 
     public Order() {
     }
 
-    public Order(Long id, String moment, OrderStatus orderStatus, User client) {
+    public Order(Long id, String moment, OrderStatus orderStatus, Client client) {
         this.id = id;
         this.moment = moment;
         setOrderStatus(orderStatus);
@@ -92,11 +94,11 @@ public class Order implements Serializable {
         }
     }
 
-    public User getClient() {
+    public Client getClient() {
         return client;
     }
 
-    public void setClient(User client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 

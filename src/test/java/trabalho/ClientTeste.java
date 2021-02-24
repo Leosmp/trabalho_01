@@ -40,10 +40,10 @@ public class ClientTeste extends Teste {
     
     @Test
     public void consultarClient() {
-        Client usuario = em.find(Client.class, 3L);
-        assertEquals("963258", usuario.getPhone());
-        assertEquals("leo@gmail.com", usuario.getEmail());
-        assertEquals("Leonardo Luiz",usuario.getName());
+        Client usuario = em.find(Client.class, 1L);
+        assertEquals("988888888", usuario.getPhone());
+        assertEquals("maria@gmail.com", usuario.getEmail());
+        assertEquals("Maria Brown",usuario.getName());
 
     }
     
@@ -64,7 +64,7 @@ public class ClientTeste extends Teste {
         String novoEmail = "eoluiz@gmail.com";
         String novoTelefone = "(81) 990901010";
         String novaSenha = "654321"; 
-        Long id = 3L;
+        long id = 2L;
         Client cliente = em.find(Client.class, id);
         cliente.setEmail(novoEmail);
         cliente.setPhone(novoTelefone);

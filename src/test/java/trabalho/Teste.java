@@ -5,6 +5,8 @@
  */
 package trabalho;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -28,6 +30,8 @@ public abstract class Teste {
     
     @BeforeClass
     public static void setUpClass() {
+        logger = Logger.getGlobal();
+        logger.setLevel(Level.INFO);
         emf = Persistence.createEntityManagerFactory("trabalho_01");
         DbUnitUtil.inserirDados();        
     }

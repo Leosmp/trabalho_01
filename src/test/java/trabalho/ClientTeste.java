@@ -5,10 +5,17 @@
  */
 package trabalho;
 import entities.Client;
+import entities.Order;
 import entities.User;
+import entities.enunm.OrderStatus;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+import javax.persistence.CacheRetrieveMode;
+import javax.persistence.TypedQuery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
@@ -49,5 +56,49 @@ public class ClientTeste extends Teste {
                
         return usuario;
     }
+        
+        @Test
+    public void atualizarUsuario() {
+        logger.info("Executando atualizarUsuario()");
+        String novoNome = "Leonardo Luiz Souto";
+        String novoEmail = "eoluiz@gmail.com";
+        String novoTelefone = "(81) 990901010";
+        String novaSenha = "654321"; 
+        Long id = 3L;
+        Client cliente = em.find(Client.class, id);
+        cliente.setEmail(novoEmail);
+        cliente.setPhone(novoTelefone);
+        cliente.setPassword(novaSenha);
+        cliente.setName(novoNome);
+        em.clear();
+        em.merge(cliente);
+        Map<String, Object> properties = new HashMap<>();
+        properties.put("javax.persistence.cache.retrieveMode", CacheRetrieveMode.BYPASS);
+        cliente = em.find(Client.class, id, properties);
+        assertEquals(novoEmail, cliente.getEmail());        
+        assertEquals(novaSenha,cliente.getPassword());
+    }
+    
+    
+    @Test
+    public void removerClient() {
+        logger.info("Executando removerClient()");
+        Client client = em.find(Client.class, 3L);
+        em.remove(client);
+        User user = em.find(User.class, 3L);
+        assertNull(user);
+    }
+    
+    public void criarOrder(Client cliente) {
+        Order order = new Order();
+        order.setMoment("2019-08-20T19:53:07Z");
+        order.setOrderStatus(OrderStatus.WAITING_PAYMENT);
+        order.setPayment(null);
+        cliente.setOrders(order);
+        em.persist(order);
+        em.flush();
+        assertNotNull(order.getId());
+    }
+
     
 }

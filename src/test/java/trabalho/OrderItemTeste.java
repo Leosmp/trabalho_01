@@ -23,7 +23,7 @@ public class OrderItemTeste extends Teste {
     
     @Test
     public void persistirOrderItem() {
-        Order o;;
+        Order o;
         o = (Order) em.find(Order.class, 2L);
         
         Product p;

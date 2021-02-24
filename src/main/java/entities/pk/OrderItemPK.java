@@ -23,11 +23,11 @@ public class OrderItemPK implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "order", referencedColumnName = "ID_ORDER")    
+    @JoinColumn(name = "ID_ORDER")    
     private Order order;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "product", referencedColumnName = "ID_PRODUCT")    
+    @JoinColumn(name = "ID_PRODUCT")    
     private Product product;
 
     public Order getOrder() {

@@ -32,6 +32,7 @@ public class OrderItem implements Serializable {
     private Long id;
     
     @Embedded
+    @Column(name = "ORDER_ITEM_PK")
     private OrderItemPK orderItemPk = new OrderItemPK();
     
     @Column(name = "QUANTITY", length = 100, nullable = false)

@@ -37,7 +37,7 @@ public class Product implements Serializable {
     @Id
     @Column(name = "ID_PRODUCT")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;;
     
     @Column(name = "NAME", length = 25, nullable = false)
     private String name;
@@ -54,7 +54,7 @@ public class Product implements Serializable {
     
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "TB_PRODUCT_CATEGORY", joinColumns = {
-        @JoinColumn(name = "ID_ITEM")},
+        @JoinColumn(name = "ID_PRODUCT")},
             inverseJoinColumns = {
                 @JoinColumn(name = "ID_CATEGORY")})
     private Set<Category> categories = new HashSet<>();

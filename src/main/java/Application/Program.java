@@ -29,7 +29,7 @@ public class Program {
     public static void main(String[] args) {   
 
         Client c1 = new Client(null, "Leonardo Luiz", "leo@gmail.com", "963258", "123965");
-        
+        //System.out.println("AQUI ----------> "+new User().toString());
         EntityManager em = null;
         EntityTransaction et = null;
 

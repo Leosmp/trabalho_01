@@ -40,7 +40,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID_USER")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     

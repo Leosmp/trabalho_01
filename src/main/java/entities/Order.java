@@ -47,7 +47,7 @@ public class Order implements Serializable {
     private Integer orderStatus;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ID_CLIENT", referencedColumnName = "ID_USER")
+    @JoinColumn(name = "ID_CLIENT")
     private Client client;
     
     @OneToMany(mappedBy = "orderItemPk.order", fetch = FetchType.LAZY,
@@ -55,7 +55,7 @@ public class Order implements Serializable {
     private Set<OrderItem> items = new HashSet<>();
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "ID_PAYMENT", referencedColumnName = "ID_PAYMENT", nullable = true)
+    @JoinColumn(name = "ID_PAYMENT")
     private Payment payment;
 
     public Order() {

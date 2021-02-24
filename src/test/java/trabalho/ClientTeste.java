@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package trabalho;
+import entities.Client;
 import entities.User;
 import java.util.Calendar;
 import static org.junit.Assert.assertEquals;
@@ -16,13 +17,13 @@ import org.junit.Test;
  *
  * @author Souza
  */
-public class UserTeste extends Teste {
+public class ClientTeste extends Teste {
     
 
     @Test
-    public void persistirUsuario() {
-        User usuario;
-        usuario = criarUsuario();
+    public void persistirClient() {
+        Client usuario;
+        usuario = criarClient();
         em.persist(usuario);
         em.flush(); //força que a persistência realizada vá para o banco neste momento.
 
@@ -31,16 +32,16 @@ public class UserTeste extends Teste {
     }
     
     @Test
-    public void consultarUsuario() {
-        User usuario = em.find(User.class, 3L);
+    public void consultarClient() {
+        Client usuario = em.find(Client.class, 3L);
         assertEquals("963258", usuario.getPhone());
         assertEquals("leo@gmail.com", usuario.getEmail());
         assertEquals("Leonardo Luiz",usuario.getName());
 
     }
     
-        private User criarUsuario() {
-        User usuario = new User();
+        private Client criarClient() {
+        Client usuario = new Client();
         usuario.setName("Leonardo Luiz");
         usuario.setEmail("leo@gmail.com");
         usuario.setPhone("963258");

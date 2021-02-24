@@ -22,7 +22,6 @@ public class CategoryTeste extends Teste {
         categoria.setName("Food"); 
         em.persist(categoria);
         em.flush();
-        System.out.println("AQUIIII --------->"+categoria.getId());
         assertNotNull(categoria.getId());
     }
     
@@ -30,6 +29,27 @@ public class CategoryTeste extends Teste {
     public void consultarCategoria() {
         Category categoria = em.find(Category.class, 4L);
         assertEquals("Food", categoria.getName());        
+    }
+    
+    @Test
+    public void atualizarCategoria(){
+        logger.info("Executando atualizarCategoria()");
+        String novoNome = "E-Books";
+        Category categoria = em.find(Category.class, 4L);
+        assertNotNull(categoria);
+        categoria.setName(novoNome);
+        em.clear();        
+        em.merge(categoria);
+        em.flush();
+    }
+    
+    @Test
+    public void removerCategoria() {
+        logger.info("Executando removerCategoria()");
+        Category categoria = em.find(Category.class, 4L);
+        assertNotNull(categoria);
+        em.remove(categoria);
+        em.flush();
     }
     
     

@@ -41,4 +41,12 @@ public class Client extends User implements Serializable{
         return orders;
     }
 
+    public void setOrders(Order orders) {
+        this.orders.add(orders);
+    }
+    
+    
+    
+    
+
 }

@@ -5,6 +5,7 @@
  */
 package trabalho;
 
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -23,6 +24,7 @@ public abstract class Teste {
     protected static EntityManagerFactory emf;
     protected EntityManager em;
     protected EntityTransaction et;
+    protected static Logger logger;
     
     @BeforeClass
     public static void setUpClass() {

@@ -36,4 +36,26 @@ public class OrderTeste extends Teste {
        assertEquals("2019-06-20T19:53:07Z",ordem.getMoment().toString());      
     }
     
+    @Test
+    public void atualizarOrder(){
+        logger.info("Executando atualizarOrder()");      
+        Order order = em.find(Order.class, 4L);
+        order.setMoment("2019-10-20T19:53:07Z");
+        order.setOrderStatus(OrderStatus.CANCELED);
+        order.setPayment(null);
+        assertNotNull(order);        
+        em.clear();        
+        em.merge(order);
+        em.flush();
+    }
+    
+    @Test
+    public void removerOrder(){
+        logger.info("Executando removerOrder()");
+        Order order = em.find(Order.class, 4L);
+        assertNotNull(order);
+        em.remove(order);
+        em.flush();
+    }
+    
 }

@@ -32,8 +32,8 @@ public class OrderTeste extends Teste {
     
     @Test
     public void consultarOrder() {
-        Order ordem = em.find(Order.class, 4L);
-       assertEquals("2019-06-20T19:53:07Z",ordem.getMoment().toString());      
+        Order ordem = em.find(Order.class, 3L);
+       assertEquals("2019-07-22T15:21:22Z",ordem.getMoment().toString());      
     }
     
     @Test

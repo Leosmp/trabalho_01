@@ -41,10 +41,10 @@ public class PaymentTeste extends Teste {
     public void atualizarPayment(){
         logger.info("Executando atualizarPayment()");
         String novoMoment = "2020-09-20T21:53:07Z";
-        Payment pagamento = em.find(Payment.class, 4L);
+        Payment pagamento = em.find(Payment.class, 3L);
         assertNotNull(pagamento);
         pagamento.setMoment(novoMoment);
-        pagamento.setOrder(em.find(Order.class, 4L));
+        pagamento.setOrder(em.find(Order.class, 3L));
         em.clear();        
         em.merge(pagamento);
         em.flush();

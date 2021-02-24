@@ -53,11 +53,11 @@ public class ProductTeste extends Teste {
         String novoNome = "Notebook HP";
         String novaDesc = "Um notebook de última geraçao";
         double novoPreco= 2000.0;
-        Product produto = em.find(Product.class, 6L);
+        Product produto = em.find(Product.class, 5L);
         produto.setName(novoNome);
         produto.setDescription(novaDesc);
         produto.setPrice(novoPreco);
-        produto.setImgUrl(null);
+        produto.setImgUrl("null");
         assertNotNull(produto);        
         em.clear();        
         em.merge(produto);

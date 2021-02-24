@@ -37,4 +37,26 @@ public class PaymentTeste extends Teste {
        assertEquals("2020-01-20T21:53:07Z",pagamento.getMoment().toString());      
     }
     
+        @Test
+    public void atualizarPayment(){
+        logger.info("Executando atualizarPayment()");
+        String novoMoment = "2020-09-20T21:53:07Z";
+        Payment pagamento = em.find(Payment.class, 4L);
+        assertNotNull(pagamento);
+        pagamento.setMoment(novoMoment);
+        pagamento.setOrder(em.find(Order.class, 4L));
+        em.clear();        
+        em.merge(pagamento);
+        em.flush();
+    }
+    
+        @Test
+    public void removerPayment() {
+        logger.info("Executando removerPayment()");
+        Payment pagamento = em.find(Payment.class, 4L);
+        assertNotNull(pagamento);
+        em.remove(pagamento);
+        em.flush();
+    }
+    
 }

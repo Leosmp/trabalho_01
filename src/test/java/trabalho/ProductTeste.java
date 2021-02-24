@@ -46,5 +46,31 @@ public class ProductTeste extends Teste {
        
         return produto;
     }
+        
+      @Test
+      public void atualizarProduto(){
+        logger.info("Executando atualizarProduto()");
+        String novoNome = "Notebook HP";
+        String novaDesc = "Um notebook de última geraçao";
+        double novoPreco= 2000.0;
+        Product produto = em.find(Product.class, 6L);
+        produto.setName(novoNome);
+        produto.setDescription(novaDesc);
+        produto.setPrice(novoPreco);
+        produto.setImgUrl(null);
+        assertNotNull(produto);        
+        em.clear();        
+        em.merge(produto);
+        em.flush();
+      }
+      
+      @Test
+      public void removerProduto(){
+        logger.info("Executando removerCategoria()");
+        Product produto = em.find(Product.class, 6L);
+        assertNotNull(produto);
+        em.remove(produto);
+        em.flush();
+      }
     
 }

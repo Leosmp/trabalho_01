@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -19,6 +21,14 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "TB_CATEGORY")
+@NamedQueries(
+        {
+            @NamedQuery(
+                    name = "Category.ByName",
+                    query = "SELECT c FROM Category c WHERE c.name LIKE :name ORDER BY c.id"
+            )
+        }
+)
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;

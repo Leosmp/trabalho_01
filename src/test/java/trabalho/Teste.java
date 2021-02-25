@@ -5,6 +5,8 @@
  */
 package trabalho;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.Logger;
@@ -22,38 +24,45 @@ import org.junit.BeforeClass;
  * @author Dev Dreamm
  */
 public abstract class Teste {
-    
+
     protected static EntityManagerFactory emf;
     protected EntityManager em;
     protected EntityTransaction et;
     protected static Logger logger;
-    
+
     @BeforeClass
     public static void setUpClass() {
         logger = Logger.getGlobal();
         logger.setLevel(Level.INFO);
         emf = Persistence.createEntityManagerFactory("trabalho_01");
-        DbUnitUtil.inserirDados();        
+        DbUnitUtil.inserirDados();
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
         emf.close();
     }
-    
+
     @Before
     public void setUp() {
         em = emf.createEntityManager();
         et = em.getTransaction();
-        et.begin();        
+        et.begin();
     }
-    
+
     @After
     public void tearDown() {
         if (!et.getRollbackOnly()) {
             et.commit();
         }
-        em.close();        
+        em.close();
     }
-    
+
+    protected Date getData(Integer dia, Integer mes, Integer ano) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, ano);
+        c.set(Calendar.MONTH, mes);
+        c.set(Calendar.DAY_OF_MONTH, dia);
+        return c.getTime();
+    }
 }

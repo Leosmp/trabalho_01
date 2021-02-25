@@ -17,23 +17,7 @@ import org.junit.runners.Suite;
  * @author eletr
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({trabalho.OrderItemTeste.class, trabalho.PaymentTeste.class, trabalho.OrderTeste.class, trabalho.CategoryTeste.class, trabalho.ClientTeste.class, trabalho.ProductTeste.class})
+@Suite.SuiteClasses({trabalho.OrderItemTeste.class, trabalho.PaymentTeste.class, trabalho.OrderTeste.class, trabalho.CategoryTeste.class, trabalho.ClientTeste.class, trabalho.ProductTeste.class, trabalho.JpqlTeste.class})
 public class TesteSuite {
-
-//    @BeforeClass
-//    public static void setUpClass() throws Exception {
-//    }
-//
-//    @AfterClass
-//    public static void tearDownClass() throws Exception {
-//    }
-//
-//    @Before
-//    public void setUp() throws Exception {
-//    }
-//
-//    @After
-//    public void tearDown() throws Exception {
-//    }
     
 }

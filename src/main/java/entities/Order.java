@@ -6,7 +6,6 @@
 package entities;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -23,6 +22,7 @@ import entities.enunm.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
+import javax.validation.constraints.NotEmpty;
 
 /**
  *
@@ -39,6 +39,7 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @NotEmpty
     @Column(name = "MOMENT", length = 20, nullable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd'T' HH:mm:ss'Z'", timezone = "GMT")
     private String moment;

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: trabalho.TesteSuite
 -------------------------------------------------------------------------------
-Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.963 sec
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.207 sec

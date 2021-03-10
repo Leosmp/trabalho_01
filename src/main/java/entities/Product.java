@@ -23,6 +23,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -39,18 +43,20 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;;
     
+    @NotBlank(message = "Preencha o nome do produto!")
     @Column(name = "NAME", length = 25, nullable = false)
     private String name;
     
+    @NotBlank @Size(max = 250) 
     @Column(name = "DESCRIPTION", length = 150, nullable = false)
     private String description;
     
+    @NotNull @Positive(message = "O preço precisa ser maior zero!")
     @Column(name = "PRICE", length = 100000, nullable = false)
     private Double price;
     
     @Column(name = "IMGURL", length = 20, nullable = false)
     private String imgUrl;
-
     
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "TB_PRODUCT_CATEGORY", joinColumns = {

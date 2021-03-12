@@ -6,7 +6,6 @@
 package entities;
 
 import java.io.Serializable;
-import java.time.Instant;
 import javax.persistence.Column;
 
 import javax.persistence.Entity;
@@ -33,7 +32,6 @@ public class Payment implements Serializable {
 
     @Column(name = "MOMENT", length = 20, nullable = false)
     private String moment;
-
  
     @OneToOne(mappedBy = "payment", optional = false, fetch = FetchType.LAZY)
     private Order order;

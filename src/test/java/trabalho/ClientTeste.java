@@ -8,15 +8,12 @@ import entities.Client;
 import entities.Order;
 import entities.User;
 import entities.enunm.OrderStatus;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import javax.persistence.CacheRetrieveMode;
-import javax.persistence.TypedQuery;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 
@@ -31,7 +28,9 @@ public class ClientTeste extends Teste {
     public void persistirClient() {
         Client usuario;
         usuario = criarClient();
-        em.persist(usuario);
+        if(usuario != null){
+            em.persist(usuario);
+        }        
         em.flush(); //força que a persistência realizada vá para o banco neste momento.
 
         assertNotNull(usuario.getId());
@@ -51,7 +50,7 @@ public class ClientTeste extends Teste {
         Client usuario = new Client();
         usuario.setName("Leonardo Luiz");
         usuario.setEmail("leo@gmail.com");
-        usuario.setPhone("963258");
+        usuario.setPhone("963258888");
         usuario.setPassword("123965");
                
         return usuario;
@@ -61,8 +60,8 @@ public class ClientTeste extends Teste {
     public void atualizarUsuario() {
         logger.info("Executando atualizarUsuario()");
         String novoNome = "Leonardo Luiz Souto";
-        String novoEmail = "eoluiz@gmail.com";
-        String novoTelefone = "(81) 990901010";
+        String novoEmail = "leoluiz@gmail.com";
+        String novoTelefone = "990901010";
         String novaSenha = "654321"; 
         long id = 2L;
         Client cliente = em.find(Client.class, id);
@@ -84,7 +83,9 @@ public class ClientTeste extends Teste {
     public void removerClient() {
         logger.info("Executando removerClient()");
         Client client = em.find(Client.class, 3L);
-        em.remove(client);
+        if(client != null){
+            em.remove(client);
+        }        
         User user = em.find(User.class, 3L);
         assertNull(user);
     }

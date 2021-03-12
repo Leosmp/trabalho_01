@@ -5,6 +5,7 @@
  */
 package entities;
 
+import Validator.ValidateState;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +23,7 @@ import entities.enunm.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 /**
@@ -44,6 +46,7 @@ public class Order implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd'T' HH:mm:ss'Z'", timezone = "GMT")
     private String moment;
     
+    @ValidateState
     @Column(name = "ORDER_STATUS", length = 1, nullable = false)
     private Integer orderStatus;
 

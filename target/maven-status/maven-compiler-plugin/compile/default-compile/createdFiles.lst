@@ -7,6 +7,7 @@ entities\OrderItem_.class
 entities\enunm\OrderStatus.class
 entities\User_.class
 Application\Program.class
+Validator\StateValidator.class
 entities\Payment_.class
 entities\Client_.class
 entities\Category_.class
@@ -16,3 +17,4 @@ entities\Order.class
 entities\User.class
 entities\Product.class
 entities\OrderItem.class
+Validator\ValidateState.class

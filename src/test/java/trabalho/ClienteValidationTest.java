@@ -5,8 +5,8 @@
  */
 package trabalho;
 
-import entities.Order;
-import entities.enunm.OrderStatus;
+import entities.Category;
+import entities.Client;
 import java.util.Set;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
@@ -17,34 +17,34 @@ import org.junit.Test;
 
 /**
  *
- * @author eletr
+ * @author Souza
  */
-public class OrderValidationTest extends Teste{
-    
+public class ClienteValidationTest extends Teste {
+            
     @Test(expected = ConstraintViolationException.class)
-    public void persistInvalidOrder() {
-        Order ordem = new Order();
+    public void persistInvalidClient() {
+        Client client = new Client();
         try{
-//        ordem.setMoment("2022-06-20T19:53:07Z");// moment null
-//        ordem.setOrderStatus(OrderStatus.WAITING_PAYMENT); // onder null
-        em.persist(ordem);
+        em.persist(client);
+        em.persist(client);
         em.flush();
         } catch (ConstraintViolationException ex) {
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
             
-            assertEquals(2, constraintViolations.size());
-            assertNull(ordem.getId());
+            assertEquals(3, constraintViolations.size());
+            assertNull(client.getPassword());
+            assertNull(client.getName());
+            assertNull(client.getEmail());
             throw ex;
         }
     }
     
     @Test(expected = ConstraintViolationException.class)
-    public void atualizeInvalidOrder() {
-        TypedQuery<Order> query = em.createQuery("SELECT o FROM Order o WHERE o.orderStatus = ?1", Order.class);
+    public void atualizeInvalidClient() {
+        TypedQuery<Client> query = em.createQuery("SELECT client FROM Client client WHERE client.id = ?1", Client.class);
         query.setParameter(1, 2);
-        Order o = query.getSingleResult();
-        o.setMoment("2022-06-20T19:53:0007Z"); // moment maior que o limite;
-
+        Client client = query.getSingleResult();           
+        client.setPassword("0987654323124050181672781929162514");
         try {
             em.flush();
         } catch (ConstraintViolationException ex) {    
@@ -52,4 +52,5 @@ public class OrderValidationTest extends Teste{
             throw ex;
         }
     }
+    
 }

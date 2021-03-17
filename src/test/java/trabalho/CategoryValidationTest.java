@@ -5,8 +5,8 @@
  */
 package trabalho;
 
+import entities.Category;
 import entities.Order;
-import entities.enunm.OrderStatus;
 import java.util.Set;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
@@ -17,33 +17,32 @@ import org.junit.Test;
 
 /**
  *
- * @author eletr
+ * @author Souza
  */
-public class OrderValidationTest extends Teste{
-    
+public class CategoryValidationTest extends Teste {
+        
     @Test(expected = ConstraintViolationException.class)
-    public void persistInvalidOrder() {
-        Order ordem = new Order();
+    public void persistInvalidCategory() {
+        Category categoria = new Category();
         try{
-//        ordem.setMoment("2022-06-20T19:53:07Z");// moment null
-//        ordem.setOrderStatus(OrderStatus.WAITING_PAYMENT); // onder null
-        em.persist(ordem);
+        em.persist(categoria);
+        em.persist(categoria);
         em.flush();
         } catch (ConstraintViolationException ex) {
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
             
-            assertEquals(2, constraintViolations.size());
-            assertNull(ordem.getId());
+            assertEquals(1, constraintViolations.size());
+            assertNull(categoria.getId());
             throw ex;
         }
     }
     
     @Test(expected = ConstraintViolationException.class)
-    public void atualizeInvalidOrder() {
-        TypedQuery<Order> query = em.createQuery("SELECT o FROM Order o WHERE o.orderStatus = ?1", Order.class);
-        query.setParameter(1, 2);
-        Order o = query.getSingleResult();
-        o.setMoment("2022-06-20T19:53:0007Z"); // moment maior que o limite;
+    public void atualizeInvalidCategory() {
+        TypedQuery<Category> query = em.createQuery("SELECT cat FROM Category cat WHERE cat.id = ?1", Category.class);
+        query.setParameter(1, 3);
+        Category cat = query.getSingleResult();   
+        cat.setName("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo semper ligula, sit amet semper mi. Donec porta imperdiet odio quis lobortis. Proin ullamcorper rhoncus tortor a fermentum. Sed quis pretium velit. In sollicitudin, velit euismod blandit ultrices, metus nunc commodo risus, sed scelerisque turpis nisl in ipsum. Cras ac porttitor odio. ");
 
         try {
             em.flush();
@@ -52,4 +51,5 @@ public class OrderValidationTest extends Teste{
             throw ex;
         }
     }
+    
 }

@@ -15,7 +15,9 @@ import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -29,17 +31,23 @@ public class OrderItem implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
+    @NotNull
     @Column(name = "ID_ORDER_ITEM")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    
     @Embedded
+    @NotNull
     @Column(name = "ORDER_ITEM_PK")
     private OrderItemPK orderItemPk = new OrderItemPK();
     
+    @NotNull
     @Column(name = "QUANTITY", length = 100, nullable = false)
     private Integer quantity;
     
+    @NotNull
+    @DecimalMin("0.1")
     @Column(name = "PRICE", length = 100000, nullable = false)
     private Double price;
 

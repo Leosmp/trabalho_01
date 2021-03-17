@@ -5,8 +5,8 @@
  */
 package trabalho;
 
-import entities.Order;
-import entities.enunm.OrderStatus;
+import entities.Payment;
+import entities.Product;
 import java.util.Set;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
@@ -17,34 +17,32 @@ import org.junit.Test;
 
 /**
  *
- * @author eletr
+ * @author Souza
  */
-public class OrderValidationTest extends Teste{
+public class PaymentValidationTest extends Teste {
     
-    @Test(expected = ConstraintViolationException.class)
-    public void persistInvalidOrder() {
-        Order ordem = new Order();
+        @Test(expected = ConstraintViolationException.class)
+    public void persistInvalidProduct() {
+        Payment pag = new Payment();
         try{
-//        ordem.setMoment("2022-06-20T19:53:07Z");// moment null
-//        ordem.setOrderStatus(OrderStatus.WAITING_PAYMENT); // onder null
-        em.persist(ordem);
+        em.persist(pag);
+        em.persist(pag);
         em.flush();
         } catch (ConstraintViolationException ex) {
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
             
-            assertEquals(2, constraintViolations.size());
-            assertNull(ordem.getId());
+            assertEquals(3, constraintViolations.size());
+            assertNull(pag.getOrder());    
             throw ex;
         }
     }
     
     @Test(expected = ConstraintViolationException.class)
-    public void atualizeInvalidOrder() {
-        TypedQuery<Order> query = em.createQuery("SELECT o FROM Order o WHERE o.orderStatus = ?1", Order.class);
-        query.setParameter(1, 2);
-        Order o = query.getSingleResult();
-        o.setMoment("2022-06-20T19:53:0007Z"); // moment maior que o limite;
-
+    public void atualizeInvalidProduct() {
+        TypedQuery<Payment> query = em.createQuery("SELECT pag FROM Payment pag WHERE pag.id = ?1", Payment.class);
+        query.setParameter(1, 1);
+        Payment pag = query.getSingleResult();           
+        pag.setMoment(moment);
         try {
             em.flush();
         } catch (ConstraintViolationException ex) {    
@@ -52,4 +50,5 @@ public class OrderValidationTest extends Teste{
             throw ex;
         }
     }
+    
 }

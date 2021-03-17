@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalho;
+package validation;
 
-import entities.Client;
-import entities.OrderItem;
+import entities.Payment;
+import entities.Product;
 import java.util.Set;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
@@ -14,36 +14,35 @@ import javax.validation.ConstraintViolationException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import org.junit.Test;
+import trabalho.Teste;
 
 /**
  *
  * @author Souza
  */
-public class OrderItemValidationTest extends Teste {
+public class PaymentValidationTest extends Teste {
     
-                
-    @Test(expected = ConstraintViolationException.class)
-    public void persistInvalidOrderItem() {
-        OrderItem oi = new OrderItem();
+        @Test(expected = ConstraintViolationException.class)
+    public void persistInvalidProduct() {
+        Payment pag = new Payment();
         try{
-        em.persist(oi);
+        em.persist(pag);
         em.flush();
         } catch (ConstraintViolationException ex) {
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
             
-            assertEquals(4, constraintViolations.size());
-            assertNull(oi.getPrice());            
-
+            assertEquals(1, constraintViolations.size());
+            assertNull(pag.getOrder());    
             throw ex;
         }
     }
     
     @Test(expected = ConstraintViolationException.class)
-    public void atualizeInvalidOrderItem() {
-        TypedQuery<OrderItem> query = em.createQuery("SELECT oi FROM OrderItem oi WHERE oi.id = ?1", OrderItem.class);
-        query.setParameter(1, 2);
-        OrderItem oi = query.getSingleResult();           
-        oi.setPrice(01803871018730173171937464644646872.20);
+    public void atualizeInvalidProduct() {
+        TypedQuery<Payment> query = em.createQuery("SELECT pag FROM Payment pag WHERE pag.id = ?1", Payment.class);
+        query.setParameter(1, 1);
+        Payment pag = query.getSingleResult();           
+        pag.setMoment("2022-06-20T19:53:0007Z");
         try {
             em.flush();
         } catch (ConstraintViolationException ex) {    

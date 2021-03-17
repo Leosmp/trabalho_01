@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalho;
+package validation;
 
 import entities.Order;
 import entities.enunm.OrderStatus;
@@ -14,6 +14,7 @@ import javax.validation.ConstraintViolationException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import org.junit.Test;
+import trabalho.Teste;
 
 /**
  *

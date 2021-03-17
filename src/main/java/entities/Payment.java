@@ -15,6 +15,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.FetchType;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -29,10 +32,12 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @NotBlank
+    @Size(min = 20, max = 20)
     @Column(name = "MOMENT", length = 20, nullable = false)
     private String moment;
- 
+    
     @OneToOne(mappedBy = "payment", optional = false, fetch = FetchType.LAZY)
     private Order order;
 

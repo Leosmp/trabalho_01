@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package trabalho;
+package validation;
 
-import entities.Payment;
-import entities.Product;
+import entities.OrderItem;
 import java.util.Set;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
@@ -14,39 +13,45 @@ import javax.validation.ConstraintViolationException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import org.junit.Test;
+import trabalho.Teste;
 
 /**
  *
  * @author Souza
  */
-public class PaymentValidationTest extends Teste {
+public class OrderItemValidationTest extends Teste {
     
-        @Test(expected = ConstraintViolationException.class)
-    public void persistInvalidProduct() {
-        Payment pag = new Payment();
+                
+    @Test(expected = ConstraintViolationException.class)
+    public void persistInvalidOrderItem() {
+        OrderItem oi = new OrderItem();
         try{
-        em.persist(pag);
-        em.persist(pag);
+        oi.setPrice(0.01);// preço abaixo do limite
+        oi.setQuantity(0);
+        em.persist(oi);
         em.flush();
         } catch (ConstraintViolationException ex) {
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
             
-            assertEquals(3, constraintViolations.size());
-            assertNull(pag.getOrder());    
+            assertEquals(2, constraintViolations.size());
+            assertNull(oi.getOrder());            
+
             throw ex;
         }
     }
     
     @Test(expected = ConstraintViolationException.class)
-    public void atualizeInvalidProduct() {
-        TypedQuery<Payment> query = em.createQuery("SELECT pag FROM Payment pag WHERE pag.id = ?1", Payment.class);
-        query.setParameter(1, 1);
-        Payment pag = query.getSingleResult();           
-        pag.setMoment(moment);
+    public void atualizeInvalidOrderItem() {
+        TypedQuery<OrderItem> query = em.createQuery("SELECT oi FROM OrderItem oi WHERE oi.id = ?1", OrderItem.class);
+        query.setParameter(1, 2);
+        OrderItem oi = query.getSingleResult();           
+        oi.setPrice(100001.0);
+        oi.setQuantity(101);
+        
         try {
             em.flush();
         } catch (ConstraintViolationException ex) {    
-            assertEquals(1, ex.getConstraintViolations().size());
+            assertEquals(2, ex.getConstraintViolations().size());
             throw ex;
         }
     }

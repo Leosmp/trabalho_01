@@ -23,6 +23,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -44,6 +46,7 @@ public class Product implements Serializable {
     private Long id;;
     
     @NotBlank(message = "Preencha o nome do produto!")
+    @Size(max = 25)
     @Column(name = "NAME", length = 25, nullable = false)
     private String name;
     
@@ -52,7 +55,9 @@ public class Product implements Serializable {
     private String description;
     
     @NotNull @Positive(message = "O preço precisa ser maior zero!")
-    @Column(name = "PRICE", length = 100000, nullable = false)
+    @DecimalMin("0.1")
+    @DecimalMax("10000.0")
+    @Column(name = "PRICE", length = 10000, nullable = false)
     private Double price;
     
     @Column(name = "IMGURL", length = 20, nullable = false)

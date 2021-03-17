@@ -47,7 +47,7 @@ public class Order implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd'T' HH:mm:ss'Z'", timezone = "GMT")
     private String moment;
     
-    @ValidateState(message = "")
+    @ValidateState
     @Column(name = "ORDER_STATUS", length = 1, nullable = false)
     private Integer orderStatus;
 

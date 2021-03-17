@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Validator;
+package entities;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -13,12 +13,12 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-@Target( {ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = StateValidator.class)
 @Documented
 public @interface ValidateState {
-    String message() default " falhaou eu acho";
+    String message() default "falhou eu acho";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

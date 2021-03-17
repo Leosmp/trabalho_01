@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Validator;
+package entities;
 
 import entities.enunm.OrderStatus;
 import java.util.ArrayList;
@@ -15,15 +15,14 @@ import javax.validation.ConstraintValidatorContext;
  *
  * @author eletr
  */
-class StateValidator  implements ConstraintValidator<ValidateState, Integer>{
+public class StateValidator implements ConstraintValidator<ValidateState, Integer>{
     private List<OrderStatus> states;    
     
     public StateValidator(){
-        
     }
     
     @Override
-    public void initialize(ValidateState validaEstado) {
+    public void initialize(ValidateState validateState) {
         this.states = new ArrayList<>();
         this.states.add(OrderStatus.PAID);
         this.states.add(OrderStatus.CANCELED);

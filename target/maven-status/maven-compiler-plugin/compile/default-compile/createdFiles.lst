@@ -4,10 +4,10 @@ entities\Client.class
 entities\pk\OrderItemPK_.class
 entities\Product_.class
 entities\OrderItem_.class
+entities\StateValidator.class
 entities\enunm\OrderStatus.class
 entities\User_.class
 Application\Program.class
-Validator\StateValidator.class
 entities\Payment_.class
 entities\Client_.class
 entities\Category_.class
@@ -16,5 +16,5 @@ entities\Payment.class
 entities\Order.class
 entities\User.class
 entities\Product.class
+entities\ValidateState.class
 entities\OrderItem.class
-Validator\ValidateState.class

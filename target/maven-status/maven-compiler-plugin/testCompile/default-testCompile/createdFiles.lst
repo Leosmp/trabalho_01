@@ -6,5 +6,6 @@ trabalho\CategoryTeste.class
 trabalho\PaymentTeste.class
 trabalho\ClientTeste.class
 trabalho\DbUnitUtil.class
+trabalho\OrderValidationTest.class
 trabalho\ProductTeste.class
 trabalho\Teste.class

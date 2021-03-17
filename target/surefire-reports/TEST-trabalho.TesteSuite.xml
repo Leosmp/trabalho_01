@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="34" failures="1" name="trabalho.TesteSuite" time="3.3" errors="2" skipped="0">
+<testsuite tests="34" failures="0" name="trabalho.TesteSuite" time="1.539" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="11.0.2+9-LTS"/>
@@ -64,364 +64,38 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="trabalho.OrderItemTeste" name="atualizarOrderItem" time="0.547"/>
-  <testcase classname="trabalho.OrderItemTeste" name="removerOrderItem" time="0.078"/>
-  <testcase classname="trabalho.OrderItemTeste" name="persistirOrderItem" time="1.063"/>
-  <testcase classname="trabalho.OrderItemTeste" name="consultarOrderItem" time="0.015"/>
-  <testcase classname="trabalho.PaymentTeste" name="persistirPayment" time="0.078"/>
-  <testcase classname="trabalho.PaymentTeste" name="consultarPayment" time="0"/>
-  <testcase classname="trabalho.PaymentTeste" name="removerPayment" time="0.016"/>
-  <testcase classname="trabalho.PaymentTeste" name="atualizarPayment" time="0.203"/>
-  <testcase classname="trabalho.OrderTeste" name="persistirOrder" time="0.096">
-    <error message="HV000064: Unable to instantiate ConstraintValidator: Validator.StateValidator." type="javax.validation.ValidationException">javax.validation.ValidationException: HV000064: Unable to instantiate ConstraintValidator: Validator.StateValidator.
-	at org.hibernate.validator.internal.util.privilegedactions.NewInstance.run(NewInstance.java:44)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorFactoryImpl.run(ConstraintValidatorFactoryImpl.java:43)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorFactoryImpl.getInstance(ConstraintValidatorFactoryImpl.java:28)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ClassBasedValidatorDescriptor.newInstance(ClassBasedValidatorDescriptor.java:84)
-	at org.hibernate.validator.internal.engine.constraintvalidation.AbstractConstraintValidatorManagerImpl.createAndInitializeValidator(AbstractConstraintValidatorManagerImpl.java:89)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManagerImpl.getInitializedValidator(ConstraintValidatorManagerImpl.java:117)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:136)
-	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
-	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
-	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validate(BeanValidationListener.java:180)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:119)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:86)
-	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyListener(DescriptorEventManager.java:746)
-	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyEJB30Listeners(DescriptorEventManager.java:689)
-	at org.eclipse.persistence.descriptors.DescriptorEventManager.executeEvent(DescriptorEventManager.java:233)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNewObjectClone(UnitOfWorkImpl.java:4416)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNotRegisteredNewObjectForPersist(UnitOfWorkImpl.java:4393)
-	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.registerNotRegisteredNewObjectForPersist(RepeatableWriteUnitOfWork.java:523)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNewObjectForPersist(UnitOfWorkImpl.java:4335)
-	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.persist(EntityManagerImpl.java:601)
-	at trabalho.OrderTeste.persistirOrder(OrderTeste.java:28)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.lang.NoSuchMethodException: Validator.StateValidator.&lt;init&gt;()
-	at java.base/java.lang.Class.getConstructor0(Class.java:3350)
-	at java.base/java.lang.Class.getConstructor(Class.java:2152)
-	at org.hibernate.validator.internal.util.privilegedactions.NewInstance.run(NewInstance.java:41)
-	... 73 more
-</error>
-    <system-out>[EL Fine]: connection: 2021-03-12 16:03:36.026--ServerSession(874981105)--Connection(2082232630)--Thread(Thread[main,5,main])--disconnect
-[EL Fine]: connection: 2021-03-12 16:03:36.026--ServerSession(874981105)--Thread(Thread[main,5,main])--/file:/C:/Users/eletr/Desktop/trabalho_01/target/classes/_trabalho_01 logout successful
-[EL Fine]: connection: 2021-03-12 16:03:36.026--ServerSession(874981105)--Connection(1586246816)--Thread(Thread[main,5,main])--disconnect
-[EL Fine]: moxy: 2021-03-12 16:03:36.026--Thread(Thread[main,5,main])--SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@58ec7116
-[EL Fine]: server: 2021-03-12 16:03:36.042--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Order] is set to [FIELD].
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field client] is being defaulted to: class entities.Client.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field payment] is being defaulted to: class entities.Payment.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field items] is being defaulted to: class entities.OrderItem.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Product] is set to [FIELD].
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field categories] is being defaulted to: class entities.Category.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field items] is being defaulted to: class entities.OrderItem.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Payment] is set to [FIELD].
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field order] is being defaulted to: class entities.Order.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Category] is set to [FIELD].
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.OrderItem] is set to [FIELD].
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.Client] is set to [FIELD].
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field orders] is being defaulted to: class entities.Order.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The access type for the persistent class [class entities.pk.OrderItemPK] is set to [FIELD].
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field product] is being defaulted to: class entities.Product.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field order] is being defaulted to: class entities.Order.
-[EL Config]: metadata: 2021-03-12 16:03:36.073--ServerSession(1673389762)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.User] is being defaulted to: User.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Order] is being defaulted to: Order.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Product] is being defaulted to: Product.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Payment] is being defaulted to: Payment.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Category] is being defaulted to: Category.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.OrderItem] is being defaulted to: OrderItem.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The alias name for the entity class [class entities.Client] is being defaulted to: Client.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field client] is being defaulted to: ID_USER.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field payment] is being defaulted to: ID.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field categories] is being defaulted to: ID_PRODUCT.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field categories] is being defaulted to: ID_CATEGORY.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field product] is being defaulted to: ID_PRODUCT.
-[EL Config]: metadata: 2021-03-12 16:03:36.089--ServerSession(1673389762)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field order] is being defaulted to: ID_ORDER.
-[EL Info]: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.7.8.v20201217-ecdf3c32c4
-[EL Fine]: connection: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Connection(1728897841)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
-	platform=&gt;DerbyPlatform
-	user name=&gt; &quot;app&quot;
-	datasource URL=&gt; &quot;jdbc:derby://localhost:1527/trabalho_01;create=true&quot;
-))
-[EL Config]: connection: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--Connected: jdbc:derby://localhost:1527/trabalho_01;create=true
-	User: app
-	Database: Apache Derby  Version: 10.14.2.0 - (1828579)
-	Driver: Apache Derby Network Client JDBC Driver  Version: 10.14.2.0 - (1828579)
-[EL Warning]: metadata: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [client] for the entity class [class entities.Order] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [payment] for the entity class [class entities.Order] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [order] for the entity class [class entities.Payment] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [product] for the entity class [class entities.pk.OrderItemPK] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [order] for the entity class [class entities.pk.OrderItemPK] since weaving was not enabled or did not occur.
-[EL Fine]: connection: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Thread(Thread[main,5,main])--/file:/C:/Users/eletr/Desktop/trabalho_01/target/classes/_trabalho_01 login successful
-[EL Fine]: sql: 2021-03-12 16:03:36.104--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_ORDER DROP CONSTRAINT TB_ORDER_ID_CLIENT
-[EL Fine]: sql: 2021-03-12 16:03:36.464--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_ORDER DROP CONSTRAINT TB_ORDERID_PAYMENT
-[EL Fine]: sql: 2021-03-12 16:03:36.526--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_ORDER_ITEM DROP CONSTRAINT TBORDERITEMIDORDER
-[EL Fine]: sql: 2021-03-12 16:03:36.589--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_ORDER_ITEM DROP CONSTRAINT TBRDERITEMDPRODUCT
-[EL Fine]: sql: 2021-03-12 16:03:36.682--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_CLIENT DROP CONSTRAINT TB_CLIENT_ID_USER
-[EL Fine]: sql: 2021-03-12 16:03:36.698--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_PRODUCT_CATEGORY DROP CONSTRAINT TBPRDCTCTGRYDPRDCT
-[EL Fine]: sql: 2021-03-12 16:03:36.761--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_PRODUCT_CATEGORY DROP CONSTRAINT TBPRDCTCTGRYDCTGRY
-[EL Fine]: sql: 2021-03-12 16:03:36.87--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--DROP TABLE TB_ORDER
-[EL Fine]: sql: 2021-03-12 16:03:37.167--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--DROP TABLE TB_PAYMENT
-[EL Fine]: sql: 2021-03-12 16:03:37.292--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--DROP TABLE TB_ORDER_ITEM
-[EL Fine]: sql: 2021-03-12 16:03:37.417--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--DROP TABLE TB_USER
-[EL Fine]: sql: 2021-03-12 16:03:37.573--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--DROP TABLE TB_CLIENT
-[EL Fine]: sql: 2021-03-12 16:03:37.745--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--DROP TABLE TB_PRODUCT
-[EL Fine]: sql: 2021-03-12 16:03:38.182--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--DROP TABLE TB_CATEGORY
-[EL Fine]: sql: 2021-03-12 16:03:38.479--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--DROP TABLE TB_PRODUCT_CATEGORY
-[EL Fine]: sql: 2021-03-12 16:03:40.12--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--CREATE TABLE TB_ORDER (ID_ORDER BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, MOMENT VARCHAR(20) NOT NULL, ORDER_STATUS INTEGER NOT NULL, ID_CLIENT BIGINT, ID_PAYMENT BIGINT, PRIMARY KEY (ID_ORDER))
-[EL Fine]: sql: 2021-03-12 16:03:40.417--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--CREATE TABLE TB_PAYMENT (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, MOMENT VARCHAR(20) NOT NULL, PRIMARY KEY (ID))
-[EL Fine]: sql: 2021-03-12 16:03:40.667--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--CREATE TABLE TB_ORDER_ITEM (ID_ORDER_ITEM BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, PRICE FLOAT NOT NULL, QUANTITY INTEGER NOT NULL, ID_ORDER BIGINT, ID_PRODUCT BIGINT, PRIMARY KEY (ID_ORDER_ITEM))
-[EL Fine]: sql: 2021-03-12 16:03:40.901--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--CREATE TABLE TB_USER (ID_USER BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TYPE_USER VARCHAR(1), EMAIL VARCHAR(40) NOT NULL, NAME VARCHAR(150) NOT NULL, PASSWORD VARCHAR(20) NOT NULL, PHONE VARCHAR(20) NOT NULL, PRIMARY KEY (ID_USER))
-[EL Fine]: sql: 2021-03-12 16:03:41.737--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--CREATE TABLE TB_CLIENT (ID_USER BIGINT NOT NULL, PRIMARY KEY (ID_USER))
-[EL Fine]: sql: 2021-03-12 16:03:42.159--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--CREATE TABLE TB_PRODUCT (ID_PRODUCT BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, DESCRIPTION VARCHAR(150) NOT NULL, IMGURL VARCHAR(20) NOT NULL, NAME VARCHAR(25) NOT NULL, PRICE FLOAT NOT NULL, PRIMARY KEY (ID_PRODUCT))
-[EL Fine]: sql: 2021-03-12 16:03:42.472--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--CREATE TABLE TB_CATEGORY (ID_CATEGORY BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, NAME VARCHAR(100) NOT NULL, PRIMARY KEY (ID_CATEGORY))
-[EL Fine]: sql: 2021-03-12 16:03:42.815--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--CREATE TABLE TB_PRODUCT_CATEGORY (ID_PRODUCT BIGINT NOT NULL, ID_CATEGORY BIGINT NOT NULL, PRIMARY KEY (ID_PRODUCT, ID_CATEGORY))
-[EL Fine]: sql: 2021-03-12 16:03:43.269--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_ORDER ADD CONSTRAINT TB_ORDER_ID_CLIENT FOREIGN KEY (ID_CLIENT) REFERENCES TB_USER (ID_USER)
-[EL Fine]: sql: 2021-03-12 16:03:43.425--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_ORDER ADD CONSTRAINT TB_ORDERID_PAYMENT FOREIGN KEY (ID_PAYMENT) REFERENCES TB_PAYMENT (ID)
-[EL Fine]: sql: 2021-03-12 16:03:43.644--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_ORDER_ITEM ADD CONSTRAINT TBORDERITEMIDORDER FOREIGN KEY (ID_ORDER) REFERENCES TB_ORDER (ID_ORDER)
-[EL Fine]: sql: 2021-03-12 16:03:43.909--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_ORDER_ITEM ADD CONSTRAINT TBRDERITEMDPRODUCT FOREIGN KEY (ID_PRODUCT) REFERENCES TB_PRODUCT (ID_PRODUCT)
-[EL Fine]: sql: 2021-03-12 16:03:44.222--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_CLIENT ADD CONSTRAINT TB_CLIENT_ID_USER FOREIGN KEY (ID_USER) REFERENCES TB_USER (ID_USER)
-[EL Fine]: sql: 2021-03-12 16:03:44.222--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_PRODUCT_CATEGORY ADD CONSTRAINT TBPRDCTCTGRYDPRDCT FOREIGN KEY (ID_PRODUCT) REFERENCES TB_PRODUCT (ID_PRODUCT)
-[EL Fine]: sql: 2021-03-12 16:03:44.394--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--ALTER TABLE TB_PRODUCT_CATEGORY ADD CONSTRAINT TBPRDCTCTGRYDCTGRY FOREIGN KEY (ID_CATEGORY) REFERENCES TB_CATEGORY (ID_CATEGORY)
-</system-out>
-  </testcase>
-  <testcase classname="trabalho.OrderTeste" name="atualizarOrder" time="0.022">
-    <error message="HV000064: Unable to instantiate ConstraintValidator: Validator.StateValidator." type="javax.validation.ValidationException">javax.validation.ValidationException: HV000064: Unable to instantiate ConstraintValidator: Validator.StateValidator.
-	at org.hibernate.validator.internal.util.privilegedactions.NewInstance.run(NewInstance.java:44)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorFactoryImpl.run(ConstraintValidatorFactoryImpl.java:43)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorFactoryImpl.getInstance(ConstraintValidatorFactoryImpl.java:28)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ClassBasedValidatorDescriptor.newInstance(ClassBasedValidatorDescriptor.java:84)
-	at org.hibernate.validator.internal.engine.constraintvalidation.AbstractConstraintValidatorManagerImpl.createAndInitializeValidator(AbstractConstraintValidatorManagerImpl.java:89)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorManagerImpl.getInitializedValidator(ConstraintValidatorManagerImpl.java:117)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:136)
-	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:54)
-	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
-	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
-	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
-	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validate(BeanValidationListener.java:180)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:119)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.aboutToUpdate(BeanValidationListener.java:96)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.preUpdateWithChanges(BeanValidationListener.java:102)
-	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyListener(DescriptorEventManager.java:752)
-	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyEJB30Listeners(DescriptorEventManager.java:689)
-	at org.eclipse.persistence.descriptors.DescriptorEventManager.executeEvent(DescriptorEventManager.java:233)
-	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.updateObjectForWriteWithChangeSet(DatabaseQueryMechanism.java:1016)
-	at org.eclipse.persistence.queries.UpdateObjectQuery.executeCommitWithChangeSet(UpdateObjectQuery.java:86)
-	at org.eclipse.persistence.internal.queries.DatabaseQueryMechanism.executeWriteWithChangeSet(DatabaseQueryMechanism.java:316)
-	at org.eclipse.persistence.queries.WriteObjectQuery.executeDatabaseQuery(WriteObjectQuery.java:60)
-	at org.eclipse.persistence.queries.DatabaseQuery.execute(DatabaseQuery.java:911)
-	at org.eclipse.persistence.queries.DatabaseQuery.executeInUnitOfWork(DatabaseQuery.java:810)
-	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWorkObjectLevelModifyQuery(ObjectLevelModifyQuery.java:110)
-	at org.eclipse.persistence.queries.ObjectLevelModifyQuery.executeInUnitOfWork(ObjectLevelModifyQuery.java:87)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.internalExecuteQuery(UnitOfWorkImpl.java:2983)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1898)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1880)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.executeQuery(AbstractSession.java:1830)
-	at org.eclipse.persistence.internal.sessions.CommitManager.commitChangedObjectsForClassWithChangeSet(CommitManager.java:275)
-	at org.eclipse.persistence.internal.sessions.CommitManager.commitAllObjectsWithChangeSet(CommitManager.java:133)
-	at org.eclipse.persistence.internal.sessions.AbstractSession.writeAllObjectsWithChangeSet(AbstractSession.java:4398)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabase(UnitOfWorkImpl.java:1495)
-	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.commitToDatabaseWithPreBuiltChangeSet(UnitOfWorkImpl.java:1641)
-	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.writeChanges(RepeatableWriteUnitOfWork.java:457)
-	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.flush(EntityManagerImpl.java:975)
-	at trabalho.OrderTeste.atualizarOrder(OrderTeste.java:49)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-Caused by: java.lang.NoSuchMethodException: Validator.StateValidator.&lt;init&gt;()
-	at java.base/java.lang.Class.getConstructor0(Class.java:3350)
-	at java.base/java.lang.Class.getConstructor(Class.java:2152)
-	at org.hibernate.validator.internal.util.privilegedactions.NewInstance.run(NewInstance.java:41)
-	... 88 more
-</error>
-    <system-out>[EL Fine]: sql: 2021-03-12 16:03:44.918--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--SELECT ID_ORDER, MOMENT, ORDER_STATUS, ID_CLIENT, ID_PAYMENT FROM TB_ORDER WHERE (ID_ORDER = ?)
-	bind =&gt; [1]
-[EL Fine]: sql: 2021-03-12 16:03:44.925--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--SELECT t0.ID_USER, t0.TYPE_USER, t0.EMAIL, t0.NAME, t0.PASSWORD, t0.PHONE, t1.ID_USER FROM TB_USER t0, TB_CLIENT t1 WHERE ((t0.ID_USER = ?) AND ((t1.ID_USER = t0.ID_USER) AND (t0.TYPE_USER = &apos;C&apos;)))
-	bind =&gt; [1]
-[EL Fine]: sql: 2021-03-12 16:03:44.931--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--SELECT ID, MOMENT FROM TB_PAYMENT WHERE (ID = ?)
-	bind =&gt; [1]
-[EL Fine]: sql: 2021-03-12 16:03:44.935--ServerSession(1673389762)--Connection(1023344953)--Thread(Thread[main,5,main])--SELECT ID_ORDER, MOMENT, ORDER_STATUS, ID_CLIENT, ID_PAYMENT FROM TB_ORDER WHERE (ID_PAYMENT = ?)
-	bind =&gt; [1]
-[EL Warning]: 2021-03-12 16:03:44.94--UnitOfWork(1056889967)--Thread(Thread[main,5,main])--javax.validation.ValidationException: HV000064: Unable to instantiate ConstraintValidator: Validator.StateValidator.
-[EL Warning]: 2021-03-12 16:03:44.94--UnitOfWork(1056889967)--Thread(Thread[main,5,main])--javax.validation.ValidationException: HV000064: Unable to instantiate ConstraintValidator: Validator.StateValidator.
-</system-out>
-    <system-err>mar 12, 2021 4:03:44 PM trabalho.OrderTeste atualizarOrder
-INFO: Executando atualizarOrder()
-</system-err>
-  </testcase>
-  <testcase classname="trabalho.OrderTeste" name="removerOrder" time="0.095"/>
-  <testcase classname="trabalho.OrderTeste" name="consultarOrder" time="0">
-    <failure message="expected:&lt;2019-[10]-20T19:53:07Z&gt; but was:&lt;2019-[06]-20T19:53:07Z&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;2019-[10]-20T19:53:07Z&gt; but was:&lt;2019-[06]-20T19:53:07Z&gt;
-	at org.junit.Assert.assertEquals(Assert.java:117)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at trabalho.OrderTeste.consultarOrder(OrderTeste.java:36)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</failure>
-  </testcase>
-  <testcase classname="trabalho.CategoryTeste" name="persistirCategoria" time="0.062"/>
+  <testcase classname="trabalho.OrderItemTeste" name="atualizarOrderItem" time="0.09"/>
+  <testcase classname="trabalho.OrderItemTeste" name="removerOrderItem" time="0.019"/>
+  <testcase classname="trabalho.OrderItemTeste" name="persistirOrderItem" time="0.167"/>
+  <testcase classname="trabalho.OrderItemTeste" name="consultarOrderItem" time="0.003"/>
+  <testcase classname="trabalho.PaymentTeste" name="persistirPayment" time="0.021"/>
+  <testcase classname="trabalho.PaymentTeste" name="consultarPayment" time="0.001"/>
+  <testcase classname="trabalho.PaymentTeste" name="removerPayment" time="0.007"/>
+  <testcase classname="trabalho.PaymentTeste" name="atualizarPayment" time="0.024"/>
+  <testcase classname="trabalho.OrderTeste" name="persistirOrder" time="0.073"/>
+  <testcase classname="trabalho.OrderTeste" name="atualizarOrder" time="0.028"/>
+  <testcase classname="trabalho.OrderTeste" name="removerOrder" time="0.023"/>
+  <testcase classname="trabalho.OrderTeste" name="consultarOrder" time="0"/>
+  <testcase classname="trabalho.CategoryTeste" name="persistirCategoria" time="0.028"/>
   <testcase classname="trabalho.CategoryTeste" name="consultarCategoria" time="0"/>
-  <testcase classname="trabalho.CategoryTeste" name="atualizarCategoria" time="0.011"/>
-  <testcase classname="trabalho.CategoryTeste" name="removerCategoria" time="0.108"/>
-  <testcase classname="trabalho.ClientTeste" name="persistirClient" time="0.375"/>
+  <testcase classname="trabalho.CategoryTeste" name="atualizarCategoria" time="0.016"/>
+  <testcase classname="trabalho.CategoryTeste" name="removerCategoria" time="0.012"/>
+  <testcase classname="trabalho.ClientTeste" name="persistirClient" time="0.36"/>
   <testcase classname="trabalho.ClientTeste" name="removerClient" time="0.016"/>
-  <testcase classname="trabalho.ClientTeste" name="consultarClient" time="0.062"/>
-  <testcase classname="trabalho.ClientTeste" name="atualizarUsuario" time="0.219"/>
-  <testcase classname="trabalho.ProductTeste" name="persistirProduto" time="0.031"/>
-  <testcase classname="trabalho.ProductTeste" name="consultarProduto" time="0"/>
-  <testcase classname="trabalho.ProductTeste" name="removerProduto" time="0.016"/>
-  <testcase classname="trabalho.ProductTeste" name="atualizarProduto" time="0.031"/>
-  <testcase classname="trabalho.JpqlTeste" name="categoriaPorNomeNamedQuery" time="0.016"/>
-  <testcase classname="trabalho.JpqlTeste" name="categoriaPorNome" time="0"/>
-  <testcase classname="trabalho.JpqlTeste" name="produtosCategoriaLeftJoin" time="0.015"/>
-  <testcase classname="trabalho.JpqlTeste" name="ordenacaoProdutoNome" time="0.016"/>
-  <testcase classname="trabalho.JpqlTeste" name="itemPedidoPrecoMaxMin" time="0"/>
-  <testcase classname="trabalho.JpqlTeste" name="itemPedidoQtdMaiorQueUm" time="0.078"/>
-  <testcase classname="trabalho.JpqlTeste" name="pedidoPorData" time="0.016"/>
+  <testcase classname="trabalho.ClientTeste" name="consultarClient" time="0.012"/>
+  <testcase classname="trabalho.ClientTeste" name="atualizarUsuario" time="0.035"/>
+  <testcase classname="trabalho.ProductTeste" name="persistirProduto" time="0.022"/>
+  <testcase classname="trabalho.ProductTeste" name="consultarProduto" time="0.001"/>
+  <testcase classname="trabalho.ProductTeste" name="removerProduto" time="0.04"/>
+  <testcase classname="trabalho.ProductTeste" name="atualizarProduto" time="0.039"/>
+  <testcase classname="trabalho.JpqlTeste" name="categoriaPorNomeNamedQuery" time="0.045"/>
+  <testcase classname="trabalho.JpqlTeste" name="categoriaPorNome" time="0.007"/>
+  <testcase classname="trabalho.JpqlTeste" name="produtosCategoriaLeftJoin" time="0.07"/>
+  <testcase classname="trabalho.JpqlTeste" name="ordenacaoProdutoNome" time="0.012"/>
+  <testcase classname="trabalho.JpqlTeste" name="itemPedidoPrecoMaxMin" time="0.008"/>
+  <testcase classname="trabalho.JpqlTeste" name="itemPedidoQtdMaiorQueUm" time="0.36"/>
+  <testcase classname="trabalho.JpqlTeste" name="pedidoPorData" time="0"/>
   <testcase classname="trabalho.JpqlTeste" name="ordenacaoProdutoCategoria" time="0"/>
-  <testcase classname="trabalho.JpqlTeste" name="pagamentoOrdenadoDesc" time="0.015"/>
+  <testcase classname="trabalho.JpqlTeste" name="pagamentoOrdenadoDesc" time="0"/>
   <testcase classname="trabalho.JpqlTeste" name="pedidoPAID" time="0"/>
 </testsuite>
